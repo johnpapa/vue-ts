@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, reactive, toRefs, watch } from 'vue';
+import { defineComponent, PropType, reactive, toRefs, watch } from 'vue';
 import { Product } from '@/products';
 
 interface Props {
@@ -18,9 +18,9 @@ export default defineComponent({
        * Adding this type yields the warning in the browser console
        * [Vue warn]: Invalid prop: type check failed for prop "product". Expected Product, got Object
        */
-      // type: Product,
+      type: Object as PropType<Product>,
       default() {
-        return {} as Product;
+        return {};
       },
     },
   },
