@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'; /* sRef, ref */
+import { defineComponent, reactive, toRefs } from 'vue';
 import { Product, products } from '@/products';
 import ProductDetail from '@/product-detail.vue';
 
@@ -25,29 +25,22 @@ export default defineComponent({
   name: 'ProductList',
   components: { ProductDetail },
   setup() {
-    // const selectedProduct: Ref<Product> = ref(new Product(0));
-    // const productsList: Ref<Product[]> = ref(products);
-
     const state: ComponentState = reactive({
       productsList: products as Product[],
       selectedProduct: new Product(0),
     });
 
     function selectProduct(p: Product) {
+      /**
+       * Setting this to a Product binds a Proxy<Product> to the detail component
+       *  which causes the browser to show a warning for
+       * [Vue warn]: Invalid prop: type check failed for prop "product". Expected Product, got Object
+       */
       state.selectedProduct = p;
-      // state.selectedProduct = new Product(
-      //   p.id,
-      //   p.name,
-      //   p.description,
-      //   p.quantity,
-      // );
-      // selectedProduct.value = p;
     }
 
     return {
       ...toRefs(state),
-      // productsList,
-      // selectedProduct,
       selectProduct,
     };
   },

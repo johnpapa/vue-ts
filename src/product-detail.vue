@@ -14,6 +14,11 @@ export default defineComponent({
   name: 'ProductDetail',
   props: {
     product: {
+      /**
+       * Adding this type yields the warning in the browser console
+       * [Vue warn]: Invalid prop: type check failed for prop "product". Expected Product, got Object
+       */
+      // type: Product,
       default() {
         return new Product(0);
       },
