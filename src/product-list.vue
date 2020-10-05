@@ -31,11 +31,6 @@ export default defineComponent({
     });
 
     function selectProduct(p: Product) {
-      /**
-       * Setting this to a Product binds a Proxy<Product> to the detail component
-       *  which causes the browser to show a warning for
-       * [Vue warn]: Invalid prop: type check failed for prop "product". Expected Product, got Object
-       */
       state.selectedProduct = p;
     }
 
