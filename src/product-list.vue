@@ -27,7 +27,7 @@ export default defineComponent({
   setup() {
     const state: ComponentState = reactive({
       productsList: products as Product[],
-      selectedProduct: new Product(0),
+      selectedProduct: {} as Product,
     });
 
     function selectProduct(p: Product) {

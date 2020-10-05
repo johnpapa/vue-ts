@@ -20,7 +20,7 @@ export default defineComponent({
        */
       // type: Product,
       default() {
-        return new Product(0);
+        return {} as Product;
       },
     },
   },
