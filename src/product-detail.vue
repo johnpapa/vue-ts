@@ -14,7 +14,6 @@ export default defineComponent({
   name: 'ProductDetail',
   props: {
     product: {
-      type: Product,
       default() {
         return new Product(0);
       },

@@ -35,6 +35,12 @@ export default defineComponent({
 
     function selectProduct(p: Product) {
       state.selectedProduct = p;
+      // state.selectedProduct = new Product(
+      //   p.id,
+      //   p.name,
+      //   p.description,
+      //   p.quantity,
+      // );
       // selectedProduct.value = p;
     }
 
